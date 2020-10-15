@@ -1,4 +1,4 @@
-State	Number NEP	New HIV Cases per 100,000 People
+State	NEP	HIV
 AK	4	3.8
 AZ	6	12.7
 AR	1	11.2
