@@ -1,53 +1,53 @@
-State	NEP	HIV
-AK	4	3.8
-AZ	6	12.7
-AR	1	11.2
-CA	45	14.2
-CO	6	8.3
-CT	10	8.4
-DC	3	45.7
-FL	3	25
-GA	2	28.6
-HI	1	5.9
-IL	7	12.7
-IN	12	9.2
-IA	2	4.4
-KY	13	9.9
-LA	5	25.2
-ME	5	2.6
-MD	5	19.6
-MA	10	10.9
-MI	10	8.5
-MN	18	6.2
-MO	2	8.7
-MT	4	2.6
-NH	4	3.2
-NJ	6	13.6
-NY	27	14.8
-NC	27	13.6
-ND	5	5.8
-OH	16	9.9
-OK	1	8.6
-OR	10	6.4
-PA	8	9.4
-RI	1	8.2
-SC	3	16.7
-TN	5	13.4
-TX	6	18.8
-UT	2	4.8
-VT	4	3.3
-VA	1	12
-WA	29	8
-WV	13	5.6
-WI	13	4.2
-PR	3	15.6
-AL	0	14.8
-DE	0	11.2
-ID	0	2.6
-KS	0	6.4
-MS	0	19.2
-NE	0	5
-NV	0	19.8
-NM	0	7
-SD	0	4
-WY	0	2.5
+State	NEP	HIV	Region
+AK	4	3.8	West
+AZ	6	12.7	West
+AR	1	11.2	South
+CA	45	14.2	West
+CO	6	8.3	West
+CT	10	8.4	Northeast
+DC	3	45.7	South
+FL	3	25	South
+GA	2	28.6	South
+HI	1	5.9	West
+IL	7	12.7	Midwest
+IN	12	9.2	Midwest
+IA	2	4.4	Midwest
+KY	13	9.9	South
+LA	5	25.2	South
+ME	5	2.6	Northeast
+MD	5	19.6	South
+MA	10	10.9	Northeast
+MI	10	8.5	Midwest
+MN	18	6.2	Midwest
+MO	2	8.7	Midwest
+MT	4	2.6	West
+NH	4	3.2	Northeast
+NJ	6	13.6	Northeast
+NY	27	14.8	Northeast
+NC	27	13.6	South
+ND	5	5.8	Midwest
+OH	16	9.9	Midwest
+OK	1	8.6	South
+OR	10	6.4	West
+PA	8	9.4	Northeast
+RI	1	8.2	Northeast
+SC	3	16.7	South
+TN	5	13.4	South
+TX	6	18.8	South
+UT	2	4.8	West
+VT	4	3.3	Northeast
+VA	1	12	Northeast
+WA	29	8	West
+WV	13	5.6	South
+WI	13	4.2	Midwest
+PR	3	15.6	Territory
+AL	0	14.8	South
+DE	0	11.2	South
+ID	0	2.6	West
+KS	0	6.4	Midwest
+MS	0	19.2	South
+NE	0	5	Midwest
+NV	0	19.8	West
+NM	0	7	West
+SD	0	4	Midwest
+WY	0	2.5	West
