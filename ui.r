@@ -4,9 +4,9 @@ library(leaflet)
 #Application Title
 navbarPage("Opioids and HIV",
 
-           #Maps - needs to 
+           #Maps - needs to have multiple tabs
           navbarMenu("Maps",
-            tabPanel("Opiod Mortality by State",
+            tabPanel("Opioid Mortality by State",
                     mainPanel(leafletOutput("worldMap"))
                     )
 )
