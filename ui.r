@@ -2,7 +2,7 @@ library(shiny)
 library(leaflet)
 
 #Application Title
-navbarPage("Opioids and HIV",
+navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8"),
 
            #Maps - needs to have multiple tabs
           navbarMenu("Maps",
