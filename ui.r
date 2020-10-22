@@ -1,14 +1,13 @@
 library(shiny)
 library(leaflet)
 
-titlePanel("Opioids and HIV")
+#Application Title
+navbarPage("Opioids and HIV",
 
-fluidPage(
-  
-  leafletOutput("worldMap"),
-  br(),
-  actionButton("newButton", "Show me a new place!")
-  
-  
-  
+           #Maps - needs to 
+          navbarMenu("Maps",
+            tabPanel("Opiod Mortality by State",
+                    mainPanel(leafletOutput("worldMap"))
+                    )
+)
 )
