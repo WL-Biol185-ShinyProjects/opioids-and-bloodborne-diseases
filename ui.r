@@ -1,5 +1,6 @@
 library(shiny)
 library(leaflet)
+library(ggplot2)
 
 #Application Title
 navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8"),
@@ -24,7 +25,7 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
           #Scatter Plots
           navbarMenu("Scatter Plots",
                      tabPanel("Needle Exchange Programs vs HIV",
-                              mainPanel()),
+                              mainPanel(plotOutput("nep_vs_hiv"))),
                      tabPanel("Opioid Prescription Rate vs Overdose Rate", 
                               mainPanel()),
                      tabPanel("Needle Exchange Programs vs Heroin Mortality",
