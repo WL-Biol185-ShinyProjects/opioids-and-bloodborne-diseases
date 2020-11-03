@@ -27,4 +27,10 @@ function(input, output) {
            aes(Number.of.Needle.Exchange.Programs, New.HIV.Cases.per.100000.People, color = Region)) + geom_point()
  
     })
+ 
+ output$prescription_vs_overdose <- renderPlot({
+    
+    ggplot()
+    
+ })
 }
