@@ -1,0 +1,40 @@
+State	Opioid.Overdoses Prescription.Rate.Per.100.People	Region
+Alaska	68	44.9	West
+Arizona	1,106	50.7	West
+Connecticut	948	43.0	Northeast
+District of Columbia	191	25.0	South
+Georgia	866	63.2	South
+Illinois	2,169	45.2	Midwest
+Iowa	143	49.3	Midwest
+Maine	282	48.1	Northeast
+Maryland	2,087	45.1	South
+Massachusetts	1,991	35.3	Northeast
+Missouri	1,132	63.4	Midwest
+Nevada	372	55.5	West
+New Hampshire	412	46.1	Northeast
+New Mexico	338	49.4	West
+New York	2,991	34.0	Northeast
+North Carolina	1,783	61.5	South
+Ohio	3,237	53.5	Midwest
+Oklahoma	308	79.1	South
+Oregon	339	57.3	West
+Rhode Island	267	43	Northeast
+South Carolina	835	69.2	South
+Tennessee	1,307	81.8	South
+Utah	437	57.1	West
+Vermont	127	42.4	Northeast
+Virginia	1,193	44.8	Northeast
+Washington	737	49.3	West
+West Virginia	702	69.3	South
+Wisconsin	846	45.8	Midwest
+Wyoming	40	57.1	West
+California	2,410	35.1	West
+Colorado	564	45.1	West
+Florida	3,189	53.7	South
+Hawaii	59	33.4	West
+Indiana	1,104	65.8	Midwest
+Kentucky	989	79.5	South
+Michigan	2,011	62.7	Midwest
+Minnesota	343	35.5	Midwest
+Mississippi	173	76.8	South
+Texas	1,402	47.2	South
