@@ -30,7 +30,8 @@ function(input, output) {
  
  output$prescription_vs_overdose <- renderPlot({
     
-    ggplot()
+   ggplot(prescrip_vs_overdose_table, 
+          aes(Prescription.Rate.Per.100.People, Opioid.Overdoses, color = Region)) + geom_point()
     
  })
 }
