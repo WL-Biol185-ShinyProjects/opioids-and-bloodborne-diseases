@@ -29,7 +29,7 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
           #Piecharts
           navbarMenu("Pie Charts",
            tabPanel("Opioid Overdose Age Groups",
-                    mainPanel()),
+                    mainPanel(plotOutput("OverdoseAge"))),
            tabPanel("HIV Age Groups", 
                     mainPanel())
           ),

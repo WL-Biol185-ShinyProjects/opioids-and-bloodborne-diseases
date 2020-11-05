@@ -34,4 +34,15 @@ function(input, output) {
           aes(Prescription.Rate.Per.100.People, Opioid.Overdoses, color = Region)) + geom_point()
     
  })
+
+
+ output$OverdoseAge <- renderPlot({
+   
+   ggplot(Overdoseage, aes(x = "", y = Age, fill = All2017)) +
+      geom_bar(stat = "identity", width = 1, color = "white") +
+      coord_polar("y", start = 0) +
+      
+      theme_void()
+   
+})
 }
