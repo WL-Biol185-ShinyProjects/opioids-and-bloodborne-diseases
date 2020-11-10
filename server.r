@@ -47,18 +47,9 @@ function(input, output) {
  })
 
 
- output$OverdoseAge <- renderPlot({
-   
-    ggplot(Overdoseage, aes(x = "" , y = All2017, fill = Age)) +
-       geom_bar(stat = "identity", width = 1, color = "white") +
-       coord_polar("y", start = 0) +
-       
-       theme_void() +
-       ggtitle("Distribution of All Opioid Mortalities in 2017 by Age Group")
-   
-})
- 
- output$choice1 <- renderPlot({
+ output$Mortalities <- renderPlot({
+    
+    if (input$grou == "1") {
     
     ggplot(Overdoseage, aes(x = "" , y = All2017, fill = Age)) +
        geom_bar(stat = "identity", width = 1, color = "white") +
@@ -67,7 +58,16 @@ function(input, output) {
        theme_void() +
        ggtitle("Distribution of All Opioid Mortalities 
          in 2017 by Age Group")
-    
+    }else if(input$group == "2"){
+       
+    ggplot(Overdoseage, aes(x = "" , y = All2018, fill = Age)) +
+       geom_bar(stat = "identity", width = 1, color = "white") +
+       coord_polar("y", start = 0) +
+       
+       theme_void() +
+       ggtitle("Distribution of All Opioid Mortalities 
+            in 2018 by Age Group")
+     
+    }
  })
- 
 }

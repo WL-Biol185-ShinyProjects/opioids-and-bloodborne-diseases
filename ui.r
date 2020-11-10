@@ -28,28 +28,29 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
           ),
           #Piecharts
           navbarMenu("Pie Charts",
-           tabPanel("Opioid Overdose Age Groups",
-                    mainPanel(fluidPage(
-                      
-                      # Copy the line below to make a select box 
-                      selectInput("select", label = h3("Select chart"), 
-                                  choices = list("Opioid Mortality by Age Group (2017)" = "choice1", 
-                                                 "Opioid Mortality by Age Group (2018)" = 2, 
-                                                 "Prescription Opioid Mortality by Age Group (2017)" = 3, 
-                                                 "Prescription Opioid Mortality by Age Group (2018)" = 4, 
-                                                 "Heroin Mortality by Age Group (2017)" = 5, 
-                                                 "Heroin Mortality by Age Group (2018)" = 6, 
-                                                 "Synthetic Opioid Mortality by Age Group (2017)" = 7, 
-                                                 "Synthetic Opioid Mortality by Age Group (2018)" = 8), 
-                                  selected = 1),
-                      
-                      hr(),
-                      fluidRow(column(3, plotOutput("choice1")))
-                      
-                    ))),
-           tabPanel("HIV Age Groups", 
-                    mainPanel())
+                     tabPanel("Opioid Overdose Age Groups",
+                              mainPanel(fluidPage(
+                                
+                                # Copy the line below to make a select box
+                                selectInput("select", label = h3("Select chart"),
+                                            choices = list("Opioid Mortality by Age Group (2017)" = "choice1",
+                                                           "Opioid Mortality by Age Group (2018)" = 2,
+                                                           "Prescription Opioid Mortality by Age Group (2017)" = 3,
+                                                           "Prescription Opioid Mortality by Age Group (2018)" = 4,
+                                                           "Heroin Mortality by Age Group (2017)" = 5,
+                                                           "Heroin Mortality by Age Group (2018)" = 6,
+                                                           "Synthetic Opioid Mortality by Age Group (2017)" = 7,
+                                                           "Synthetic Opioid Mortality by Age Group (2018)" = 8),
+                                            selected = 1),
+                                
+                                hr(),
+                                fluidRow(column(3, plotOutput("choice1")))
+                                
+                              ))),
+                     tabPanel("HIV Age Groups",
+                              mainPanel())
           ),
+        
           #Scatter Plots
           navbarMenu("Scatter Plots",
                      tabPanel("Needle Exchange Programs vs HIV",
