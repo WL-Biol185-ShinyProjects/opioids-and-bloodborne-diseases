@@ -6,6 +6,8 @@ nep_vs_hiv_table <- read.table("num-needle-exchange-programs.txt", header = TRUE
 
 prescrip_vs_overdose_table <- read.table("prescription-vs-overdose.txt", header = TRUE)
 
+nep_vs_heroin_table <- read.table("nep-vs-heroin-mortality.txt", header = TRUE)
+
 function(input, output) {
  
  output$worldMap <- renderLeaflet({
