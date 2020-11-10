@@ -40,6 +40,6 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
                      tabPanel("Opioid Prescription Rate vs Overdose Rate", 
                               mainPanel(plotOutput("prescription_vs_overdose"))),
                      tabPanel("Needle Exchange Programs vs Heroin Mortality",
-                              mainPanel())
+                              mainPanel(plotOutput("nep_vs_heroin")))
           )
 )
