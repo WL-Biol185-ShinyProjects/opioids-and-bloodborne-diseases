@@ -36,10 +36,13 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
           #Scatter Plots
           navbarMenu("Scatter Plots",
                      tabPanel("Needle Exchange Programs vs HIV",
-                              mainPanel(plotOutput("nep_vs_hiv"))),
+                              mainPanel(plotOutput("nep_vs_hiv"),
+                                        p("This graph shows the number of new HIV cases per 100,000 residents in each state versus the number of needle exchange programs in each state. Each point on the graph represent a single state or US territory, color-coded by region for clarity."))),
                      tabPanel("Opioid Prescription Rate vs Overdose Rate", 
-                              mainPanel(plotOutput("prescription_vs_overdose"))),
+                              mainPanel(plotOutput("prescription_vs_overdose"),
+                                        p("This graph shows the total number of opioid cases per 100 residents in each state versus the prescription rate per 100 residents in each state. Each point on the graph represents a single state, color-coded by region for clarity."))),
                      tabPanel("Needle Exchange Programs vs Heroin Mortality",
-                              mainPanel(plotOutput("nep_vs_heroin")))
+                              mainPanel(plotOutput("nep_vs_heroin"),
+                                        p("This graph shows the total number of heroin overdoses in each state versus the total number of needle exchange programs in each state. Each point represents a single state, color-coded by region for clarity.")))
           )
 )
