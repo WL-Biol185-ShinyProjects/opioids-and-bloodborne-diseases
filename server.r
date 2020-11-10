@@ -57,4 +57,17 @@ function(input, output) {
        ggtitle("Distribution of All Opioid Mortalities in 2017 by Age Group")
    
 })
+ 
+ output$choice1 <- renderPlot({
+    
+    ggplot(Overdoseage, aes(x = "" , y = All2017, fill = Age)) +
+       geom_bar(stat = "identity", width = 1, color = "white") +
+       coord_polar("y", start = 0) +
+       
+       theme_void() +
+       ggtitle("Distribution of All Opioid Mortalities 
+         in 2017 by Age Group")
+    
+ })
+ 
 }
