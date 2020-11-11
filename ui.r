@@ -2,6 +2,9 @@ library(shiny)
 library(leaflet)
 library(ggplot2)
 
+Overdosage <- read_excel("Overdoseage.xlsx")
+
+
 #Application Title
 navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8"),
 
@@ -19,7 +22,7 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
            #Maps - needs to have multiple tabs
           navbarMenu("Maps",
             tabPanel("Opioid Mortality by State",
-                    mainPanel(leafletOutput("worldMap"))
+                    mainPanel(leafletOutput("opioidMortalityMap"))
                     ),
             tabPanel("Needle Exchange Programs by State", 
                      mainPanel()),                   
@@ -32,19 +35,12 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
                               mainPanel(fluidPage(
                                 
                                 # Copy the line below to make a select box
-                                selectInput("select", label = h3("Select chart"),
-                                            choices = list("Opioid Mortality by Age Group (2017)" = "choice1",
-                                                           "Opioid Mortality by Age Group (2018)" = 2,
-                                                           "Prescription Opioid Mortality by Age Group (2017)" = 3,
-                                                           "Prescription Opioid Mortality by Age Group (2018)" = 4,
-                                                           "Heroin Mortality by Age Group (2017)" = 5,
-                                                           "Heroin Mortality by Age Group (2018)" = 6,
-                                                           "Synthetic Opioid Mortality by Age Group (2017)" = 7,
-                                                           "Synthetic Opioid Mortality by Age Group (2018)" = 8),
+                                selectInput("selectOpioidOverdosePie", label = h3("Select chart"),
+                                            choices = colnames(Overdosage)[4:9],
                                             selected = 1),
                                 
                                 hr(),
-                                fluidRow(column(3, plotOutput("choice1")))
+                                fluidRow(column(3, plotOutput("opioidOverdosePie")))
                                 
                               ))),
                      tabPanel("HIV Age Groups",

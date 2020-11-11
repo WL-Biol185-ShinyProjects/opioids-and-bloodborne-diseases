@@ -1,6 +1,8 @@
 library(shiny)
 library(leaflet)
 library(tidyverse)
+library(rgdal)
+
 
 nep_vs_hiv_table <- read.table("num-needle-exchange-programs.txt", header = TRUE, sep = ",")
 
@@ -8,22 +10,44 @@ prescrip_vs_overdose_table <- read.table("prescription-vs-overdose.txt", header 
 
 nep_vs_heroin_table <- read.table("nep-vs-heroin-mortality.txt", header = TRUE)
 
+statesGeo <- readOGR("states.geo.json")
+
+Overdosage <- readxl::read_excel("Overdoseage.xlsx")
+
+
 function(input, output) {
+  
+  output$opioidOverdosePie <- renderPlot({
+    
+    ggplot(Overdoseage, aes(x = "", fill = Age)) +
+      geom_bar(aes_string(y = input$selectOpioidOverdosePie), stat = "identity", width = 1, color = "white") +
+      coord_polar("y", start = 0) +
+      
+      theme_void()
+    
+  })
  
- output$worldMap <- renderLeaflet({
+ output$opioidMortalityMap <- renderLeaflet({
    
-   leaflet() %>%
+   prescrip_vs_overdose_table$formattedState <- 
+     gsub(".", " ", prescrip_vs_overdose_table$State, fixed = TRUE)
+   
+   statesGeo@data <- left_join(statesGeo@data, 
+                               prescrip_vs_overdose_table,
+                               by = c("NAME" = "formattedState")
+                               )
+   
+   pal <- colorBin("Blues", domain = statesGeo@data$Opioid.Overdoses)
+   
+   
+   leaflet(statesGeo) %>%
      setView(lng = -95.7129, lat = 37.0902, zoom = 3.5) %>%
-     addTiles()
+     addPolygons(
+       fillcolor = ~pal(Opioid.Overdoses)
+     )
    
  })
   
- observe({
-   
-   leafletProxy("worldMap") %>%
-     setView(lng = -95.7219, lat = 37.0902, zoom = 3.5)
-   
- })
  
  output$nep_vs_hiv <- renderPlot({
     
