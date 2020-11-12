@@ -43,13 +43,13 @@ function(input, output) {
    leaflet(statesGeo) %>%
      setView(lng = -95.7129, lat = 37.0902, zoom = 3.5) %>%
      addPolygons(
-       stroke = FALSE, 
+       stroke = TRUE, 
        smoothFactor     = 0.3,
        fillOpacity      = 0.7,
        opacity          = 1,
        dashArray        = "3",
        weight           = 2,
-       color            = "white",
+       color            = "black",
        fillColor = ~pal(Prescription.Rate.Per.100.People)
      ) %>%
      
@@ -74,13 +74,13 @@ function(input, output) {
    leaflet(statesGeo) %>%
      setView(lng = -95.7129, lat = 37.0902, zoom = 3.5) %>%
      addPolygons(
-       stroke = FALSE, 
+       stroke = TRUE, 
        smoothFactor     = 0.3,
        fillOpacity      = 0.7,
        opacity          = 1,
        dashArray        = "3",
        weight           = 2,
-       color            = "white",
+       color            = "black",
        fillColor = ~pal(Number.of.Needle.Exchange.Programs)
      ) %>%
      
@@ -108,13 +108,13 @@ function(input, output) {
    leaflet(statesGeo) %>%
      setView(lng = -95.7129, lat = 37.0902, zoom = 3.5) %>%
      addPolygons(
-       stroke = FALSE, 
+       stroke = TRUE, 
        smoothFactor     = 0.3,
        fillOpacity      = 0.7,
        opacity          = 1,
        dashArray        = "3",
        weight           = 2,
-       color            = "white",
+       color            = "black",
        fillColor = ~pal(Opioid.Overdoses)
        ) %>%
      
