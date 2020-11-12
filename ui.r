@@ -45,8 +45,8 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
                                 
                               ))),
                      tabPanel("HIV Age Groups",
-                              mainPanel())
-          ),
+                              mainPanel(fluidPage(plotOutput("hivAgePie")), plotOutput("hivAgePie2"))
+          )),
         
           #Scatter Plots
           navbarMenu("Scatter Plots",

@@ -2,7 +2,7 @@ library(shiny)
 library(leaflet)
 library(tidyverse)
 library(rgdal)
-
+library(readr)
 
 nep_vs_hiv_table <- read.table("num-needle-exchange-programs.txt", header = TRUE, sep = ",")
 
@@ -12,8 +12,9 @@ nep_vs_heroin_table <- read.table("nep-vs-heroin-mortality.txt", header = TRUE)
 
 statesGeo <- readOGR("states.geo.json")
 
-Overdosage <- readxl::read_excel("Overdoseage.xlsx")
+Overdoseage <- readxl::read_excel("Overdoseage.xlsx")
 
+HIVAGE <- read_csv("HIVAGE.csv")
 
 function(input, output) {
   
@@ -147,4 +148,25 @@ function(input, output) {
            aes(Number.NEP, Heroin.Overdoses, color = Region)) + geom_point()
     
  })
+ 
+ output$hivAgePie <- renderPlot({
+    ggplot(HIVAGE, aes(x = "" , y = Year_2017, fill = Age_Group)) +
+       geom_bar(stat = "identity", width = 1, color = "white") +
+       coord_polar("y", start = 0) +
+       
+       theme_void() +
+       ggtitle("Distribution of HIV Diagnoses in 2017 by Age Group")
+    
+ })
+ 
+ output$hivAgePie2 <- renderPlot({
+    ggplot(HIVAGE, aes(x = "" , y = Year_2018, fill = Age_Group)) +
+       geom_bar(stat = "identity", width = 1, color = "white") +
+       coord_polar("y", start = 0) +
+       
+       theme_void() +
+       ggtitle("Distribution of HIV Diagnoses in 2018 by Age Group")
+    
+ })
+ 
 }

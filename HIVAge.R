@@ -1,5 +1,5 @@
 # Basic piechart HIV Diagnoses 2017
-ggplot(HIVAGE, aes(x = "" , y = X2017, fill = Age.Group)) +
+ggplot(HIVAGE, aes(x = "" , y = Year_2017, fill = Age_Group)) +
   geom_bar(stat = "identity", width = 1, color = "white") +
   coord_polar("y", start = 0) +
   
@@ -8,7 +8,7 @@ ggplot(HIVAGE, aes(x = "" , y = X2017, fill = Age.Group)) +
          in 2017 by Age Group")
 
 # Basic piechart HIV Diagnoses 2018
-ggplot(HIVAGE, aes(x = "" , y = X2018, fill = Age.Group)) +
+ggplot(HIVAGE, aes(x = "" , y = Year_2018, fill = Age_Group)) +
   geom_bar(stat = "identity", width = 1, color = "white") +
   coord_polar("y", start = 0) +
   
