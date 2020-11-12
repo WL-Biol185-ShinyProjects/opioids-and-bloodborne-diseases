@@ -26,6 +26,36 @@ function(input, output) {
       theme_void()
     
   })
+  
+ output$nepMap <- renderLeaflet({
+   statesGeo@data <- left_join(statesGeo@data, 
+                               nep_vs_hiv_table,
+                               by = c("NAME" = "State")
+   )
+   
+   pal <- colorBin("Greens", domain = statesGeo@data$Number.of.Needle.Exchange.Programs)
+   
+   
+   leaflet(statesGeo) %>%
+     setView(lng = -95.7129, lat = 37.0902, zoom = 3.5) %>%
+     addPolygons(
+       stroke = FALSE, 
+       smoothFactor     = 0.3,
+       fillOpacity      = 0.7,
+       opacity          = 1,
+       dashArray        = "3",
+       weight           = 2,
+       color            = "white",
+       fillColor = ~pal(Number.of.Needle.Exchange.Programs)
+     ) %>%
+     
+     addLegend("bottomright",
+               pal          = pal, 
+               values       = ~(Number.of.Needle.Exchange.Programs), 
+               opacity      = 0.8, 
+               title        = "Needle Exchange Programs in State (2018)")
+   
+ })
  
  output$opioidMortalityMap <- renderLeaflet({
    

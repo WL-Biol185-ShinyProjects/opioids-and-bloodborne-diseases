@@ -25,7 +25,8 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
                     mainPanel(leafletOutput("opioidMortalityMap"))
                     ),
             tabPanel("Needle Exchange Programs by State", 
-                     mainPanel()),                   
+                     mainPanel(leafletOutput("nepMap"))
+                     ),                   
             tabPanel("Opioid Perscription Rate by State ", 
                      mainPanel())
           ),
