@@ -36,7 +36,7 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
                                 
                                 # Copy the line below to make a select box
                                 selectInput("selectOpioidOverdosePie", label = h3("Select chart"),
-                                            choices = colnames(Overdoseage)[4:9],
+                                            choices = colnames(Overdoseage)[2:9],
                                             selected = 1),
                                 
                                 hr(),
