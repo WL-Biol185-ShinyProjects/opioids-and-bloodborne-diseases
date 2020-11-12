@@ -40,7 +40,7 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
                                             selected = 1),
                                 
                                 hr(),
-                                fluidRow(column(3, plotOutput("opioidOverdosePie")))
+                                fluidRow(column(width=12, plotOutput("opioidOverdosePie")))
                                 
                               ))),
                      tabPanel("HIV Age Groups",
