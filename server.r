@@ -37,14 +37,27 @@ function(input, output) {
                                by = c("NAME" = "formattedState")
                                )
    
-   pal <- colorBin("Blues", domain = statesGeo@data$Opioid.Overdoses)
+   pal <- colorBin("Purples", domain = statesGeo@data$Opioid.Overdoses)
    
    
    leaflet(statesGeo) %>%
      setView(lng = -95.7129, lat = 37.0902, zoom = 3.5) %>%
      addPolygons(
+       stroke = FALSE, 
+       smoothFactor     = 0.3,
+       fillOpacity      = 0.7,
+       opacity          = 1,
+       dashArray        = "3",
+       weight           = 2,
+       color            = "white",
        fillColor = ~pal(Opioid.Overdoses)
-     )
+       ) %>%
+     
+     addLegend("bottomright",
+               pal          = pal, 
+               values       = ~(Opioid.Overdoses), 
+               opacity      = 0.8, 
+               title        = "Opioid Overdoses in State (2019)")
    
  })
   
