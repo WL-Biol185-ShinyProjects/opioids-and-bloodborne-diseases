@@ -43,7 +43,7 @@ function(input, output) {
    leaflet(statesGeo) %>%
      setView(lng = -95.7129, lat = 37.0902, zoom = 3.5) %>%
      addPolygons(
-       fillcolor = ~pal(Opioid.Overdoses)
+       fillColor = ~pal(Opioid.Overdoses)
      )
    
  })
