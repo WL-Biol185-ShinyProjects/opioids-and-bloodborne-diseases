@@ -27,6 +27,41 @@ function(input, output) {
     
   })
   
+ output$prescripMap <- renderLeaflet({
+   
+   prescrip_vs_overdose_table$formattedState <- 
+     gsub(".", " ", prescrip_vs_overdose_table$State, fixed = TRUE)
+   
+   statesGeo@data <- left_join(statesGeo@data, 
+                               prescrip_vs_overdose_table,
+                               by = c("NAME" = "formattedState")
+   )
+   
+   pal <- colorBin("Reds", domain = statesGeo@data$Prescription.Rate.Per.100.People)
+   
+   
+   leaflet(statesGeo) %>%
+     setView(lng = -95.7129, lat = 37.0902, zoom = 3.5) %>%
+     addPolygons(
+       stroke = FALSE, 
+       smoothFactor     = 0.3,
+       fillOpacity      = 0.7,
+       opacity          = 1,
+       dashArray        = "3",
+       weight           = 2,
+       color            = "white",
+       fillColor = ~pal(Prescription.Rate.Per.100.People)
+     ) %>%
+     
+     addLegend("bottomright",
+               pal          = pal, 
+               values       = ~(Prescription.Rate.Per.100.People), 
+               opacity      = 0.8, 
+               title        = "Prescriptions per 100 Residents")
+   
+   
+ })
+  
  output$nepMap <- renderLeaflet({
    statesGeo@data <- left_join(statesGeo@data, 
                                nep_vs_hiv_table,
@@ -111,30 +146,5 @@ function(input, output) {
     ggplot(nep_vs_heroin_table, 
            aes(Number.NEP, Heroin.Overdoses, color = Region)) + geom_point()
     
- })
-
-
- output$Mortalities <- renderPlot({
-    
-    if (input$grou == "1") {
-    
-    ggplot(Overdoseage, aes(x = "" , y = All2017, fill = Age)) +
-       geom_bar(stat = "identity", width = 1, color = "white") +
-       coord_polar("y", start = 0) +
-       
-       theme_void() +
-       ggtitle("Distribution of All Opioid Mortalities 
-         in 2017 by Age Group")
-    }else if(input$group == "2"){
-       
-    ggplot(Overdoseage, aes(x = "" , y = All2018, fill = Age)) +
-       geom_bar(stat = "identity", width = 1, color = "white") +
-       coord_polar("y", start = 0) +
-       
-       theme_void() +
-       ggtitle("Distribution of All Opioid Mortalities 
-            in 2018 by Age Group")
-     
-    }
  })
 }
