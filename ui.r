@@ -7,18 +7,17 @@ Overdoseage <- readxl::read_excel("Overdoseage.xlsx")
 
 #Application Title
 navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8"),
-
-           #Introduction to Our Project
-           navbarMenu("Introduction and Contributors",
-                      tabPanel("The Opioid Epidemic and HIV",
-                               p("Due to the overprescription of opioid medications by doctors beginning in the 1990s, rates of opioid abuse and overdose increased over the subsequent decades. Many people originally prescribed opioid painkillers eventually turned to heroin and synthetic opioids, which are generally cheaper than prescriptions. With the use of intravaneous drugs comes the risk of bloodborne diseases, like HIV. Our project seeks to describe the correlation between opioid overprescription, opioid abuse, and rates of HIV infection.")),
-                      tabPanel("Sources",
-                               p("Data was taken from amfAR, the Foundation for AIDS Research, and the Centers for Disease Control and Prevention.")),
-                      tabPanel("About the Creators",
-                               p("This web application was created by Tiffani Thomason, a tired Neuroscience and Philosophy major, and Gabrielle Jones, an equally tired Biology major, both at Washington and Lee University. Please feel free to send any suggestions for the site to jonesg22@mail.wlu.edu!"))
-                      ),
-           
-           
+                      
+                      #Introduction and Sources
+                                 navbarMenu("Introduction and Contributors", tabPanel("Opioids and HIV",
+                                          strong("Due to the overprescription of opioid medications by doctors beginning in the 1990s, rates of opioid abuse and overdose increased over the subsequent decades. Many people originally prescribed opioid painkillers eventually turned to heroin and synthetic opioids, which are generally cheaper than prescriptions. With the use of intravaneous drugs comes the risk of bloodborne diseases, like HIV. Our project seeks to describe the correlation between opioid overprescription, opioid abuse, and rates of HIV infection."),
+                                          br(),
+                                          strong("Data was taken from amfAR, the Foundation for AIDS Research, and the Centers for Disease Control and Prevention."),
+                                          br(),
+                                          br(),
+                                          strong("This web application was created by Tiffani Thomason, a tired Neuroscience and Philosophy major, and Gabrielle Jones, an equally tired Biology major, both at Washington and Lee University. Please feel free to send any suggestions for the site to jonesg22@mail.wlu.edu!")
+                      )),
+                      
            #Maps - needs to have multiple tabs
           navbarMenu("Maps",
             tabPanel("Opioid Mortality by State",
