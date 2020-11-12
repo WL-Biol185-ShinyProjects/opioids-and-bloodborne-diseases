@@ -21,13 +21,16 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
            #Maps - needs to have multiple tabs
           navbarMenu("Maps",
             tabPanel("Opioid Mortality by State",
-                    mainPanel(leafletOutput("opioidMortalityMap"))
+                    mainPanel(leafletOutput("opioidMortalityMap"),
+                              p("A map of opioid mortality in the United States. Darker purple indicates a greater number of fatalities, while a grey state is one for which data could not be found."))
                     ),
             tabPanel("Needle Exchange Programs by State", 
-                     mainPanel(leafletOutput("nepMap"))
+                     mainPanel(leafletOutput("nepMap"),
+                               p("A map of needle exchange programs in the United States. Darker green indicates a greater number of NEPs, while grey indicates that no data could be found for that state."))
                      ),                   
             tabPanel("Opioid Prescription Rate by State ", 
-                     mainPanel(leafletOutput("prescripMap")))
+                     mainPanel(leafletOutput("prescripMap"),
+                               p("A map of opioid prescriptions per 100 residents in each state. Darker red indicates a greater number of prescriptions per resident, while grey indicates that no data could be found for that state.")))
           ),
           #Piecharts
           navbarMenu("Pie Charts",
