@@ -2,7 +2,7 @@ library(shiny)
 library(leaflet)
 library(ggplot2)
 
-Overdosage <- readxl::read_excel("Overdoseage.xlsx")
+Overdoseage <- readxl::read_excel("Overdoseage.xlsx")
 
 
 #Application Title
@@ -36,7 +36,7 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
                                 
                                 # Copy the line below to make a select box
                                 selectInput("selectOpioidOverdosePie", label = h3("Select chart"),
-                                            choices = colnames(Overdosage)[4:9],
+                                            choices = colnames(Overdoseage)[4:9],
                                             selected = 1),
                                 
                                 hr(),
