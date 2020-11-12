@@ -1,8 +1,8 @@
-library(shiny)
+library(shiny) 
 library(leaflet)
 library(ggplot2)
 
-Overdosage <- read_excel("Overdoseage.xlsx")
+Overdosage <- readxl::read_excel("Overdoseage.xlsx")
 
 
 #Application Title
