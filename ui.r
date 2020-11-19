@@ -19,7 +19,10 @@ navbarPage(title = span( "Opioids and HIV", style = "background-color: #AAA1C8")
                                           strong("https://opioid.amfar.org/indicator/num_SSPs"),
                                           br(),
                                           br(),
-                                          #Insert Tiffani Link Here
+                                          strong("https://www.cdc.gov/drugoverdose/maps/rxrate-maps.html"),
+                                          br(),
+                                          br(),
+                                          strong("https://www.cdc.gov/mmwr/volumes/69/wr/mm6911a4.htm#T1_down"),
                                           br(),
                                           br(),
                                           strong("This web application was created by Tiffani Thomason, a tired Neuroscience and Philosophy major, and Gabrielle Jones, an equally tired Biology major, both at Washington and Lee University. Please feel free to send any suggestions for the site to jonesg22@mail.wlu.edu!")
